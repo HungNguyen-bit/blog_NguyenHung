@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Thiết lập SSH với jumhost",
+    "description": "Hướng dẫn triển khai kết nối SSH an toàn thông qua jumphost (bastion host), cấu hình key-based authentication, agent forwarding và các biện pháp giới hạn truy cập.",
+    "image": "/github-actions.svg",
+    "link": "#",
+    "content": "<p>Project này mô tả cách cấu hình một jumphost để bảo vệ các máy chủ nội bộ. Nội dung bao gồm: tạo SSH key, phân quyền, thiết lập SSH config, tường lửa, và các mẹo bảo mật khi sử dụng agent forwarding. Phù hợp cho việc truy cập an toàn trong môi trường production.</p>"
+  },
+  {
+    "id": 2,
+    "name": "Tích hợp công cụ bảo mật vào CI/CD (DevSecOps)",
+    "description": "Tích hợp các công cụ kiểm tra bảo mật (SAST, DAST, dependency scanning) vào pipeline CI/CD sử dụng GitHub Actions và Jenkins.",
+    "image": "/jenkins.svg",
+    "link": "#",
+    "content": "<p>Project này minh họa mô hình DevSecOps: tự động chạy quét lỗ hổng mã nguồn, phân tích phụ thuộc, và chạy kiểm thử bảo mật trong pipeline. Ví dụ cấu hình GitHub Actions để chạy SAST (ví dụ: semgrep), dependency scanning, và tích hợp Jenkins để chạy pipeline build/test/deploy với bước bảo mật trước khi deploy.</p>"
+  }
+]

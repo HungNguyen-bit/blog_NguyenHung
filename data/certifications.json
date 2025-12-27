@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Networking Basics",
+    "issuer": "Cisco",
+    "date": "2025-25-01",
+    "link": "#",
+    "image": "/1766757390593-ccnet.png",
+    "fullImage": "/1766685579701-nhiidieencahng.jpg"
+  },
+  {
+    "id": 2,
+    "name": "JavaScript Essentials 1",
+    "issuer": "Cisco",
+    "date": "2025-25-1",
+    "link": "#",
+    "image": "/1766757279319-ccjava.png"
+  },
+  {
+    "id": 1766754860752,
+    "name": "JavaScript Essentials 2",
+    "issuer": "Cisco",
+    "date": "2025-25-1",
+    "link": "",
+    "image": "/1766757359886-ccjava1.png"
+  }
+]

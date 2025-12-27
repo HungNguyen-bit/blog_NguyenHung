@@ -1,26 +1,131 @@
+
 @import "tailwindcss";
 
+/* Dark purple / neon theme inspired by the screenshot */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-dark: #070607;
+  --panel-dark: rgba(15,15,18,0.6);
+  --fg: #dcdde0;
+  --muted: #9aa0a6;
+  --accent-1: #8a2be2; /* blueviolet */
+  --accent-2: #ff5ab8; /* pink */
+  --accent-grad: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  --card-border: rgba(138,43,226,0.18);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(138,43,226,0.07), transparent 10%),
+              radial-gradient(900px 500px at 90% 80%, rgba(255,90,184,0.05), transparent 12%),
+              var(--bg-dark);
+  color: var(--fg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* subtle pattern layer */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="20" cy="20" r="1.2" fill="%23ffffff" fill-opacity="0.02"/></svg>');
+  opacity: 0.7;
+}
+
+/* Hero title gradient like "Quang Hiếu" */
+.hero-title {
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  margin: 0;
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 6px 30px rgba(138,43,226,0.18);
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  max-width: 66ch;
+}
+
+/* Avatar with neon ring */
+.avatar-wrap {
+  display: inline-block;
+  border-radius: 9999px;
+  padding: 6px; /* ring thickness */
+  background: conic-gradient(from 200deg at 50% 50%, rgba(138,43,226,0.85), rgba(255,90,184,0.85));
+  box-shadow: 0 8px 40px rgba(138,43,226,0.15);
+}
+.avatar {
+  display: block;
+  border-radius: 9999px;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  border: 6px solid rgba(0,0,0,0.35);
+}
+
+/* cards / tech boxes */
+.tech-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  padding: 1.6rem;
+  border: 1px solid var(--card-border);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.tech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(138,43,226,0.12);
+  border-color: rgba(255,90,184,0.28);
+}
+
+/* section heading underline accent */
+.section-heading {
+  text-align: center;
+  font-weight: 700;
+  color: var(--fg);
+}
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: var(--accent-grad);
+  box-shadow: 0 6px 24px rgba(138,43,226,0.12);
+}
+
+/* Buttons */
+.btn-main {
+  background: var(--accent-grad);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(138,43,226,0.16);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-main:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(138,43,226,0.18); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+}
+
+/* small misc */
+.muted { color: var(--muted); }
+.glow-text { text-shadow: 0 8px 48px rgba(138,43,226,0.14); }
+
+/* make images and svgs crisp in dark */
+img, svg { image-rendering: auto; }
