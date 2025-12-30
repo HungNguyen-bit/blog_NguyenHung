@@ -7,9 +7,9 @@ export async function generateStaticParams() {
   return posts.map((p) => ({ id: String(p.id) }));
 }
 
-export default function PostDetail({ params }: { params: { id: string } }) {
+export default async function PostDetail({ params }: { params: any }) {
   const posts = postsData as any[];
-  const id = params.id;
+  const { id } = await params;
   const post = posts.find((p) => String(p.id) === String(id));
 
   if (!post) {
@@ -33,7 +33,7 @@ export default function PostDetail({ params }: { params: { id: string } }) {
               <div className="relative">
                 <div className="flex items-center gap-3">
                   <span className="text-xs px-3 py-1 rounded bg-gradient-to-r from-indigo-500 to-pink-500 text-white">HÀNH TRÌNH HỌC</span>
-                  <time className="text-xs text-gray-400">{post.date ? new Date(post.date).toLocaleDateString() : ''}</time>
+                  <time className="text-xs text-gray-400">{post.date ? new Date(post.date).toLocaleDateString('en-GB') : ''}</time>
                 </div>
 
                 <h1 className="mt-4 text-4xl md:text-5xl font-bold text-white" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>{post.title}</h1>

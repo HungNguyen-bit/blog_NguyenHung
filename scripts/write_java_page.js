@@ -1,5 +1,6 @@
-"use client";
-
+const fs = require('fs');
+const path = 'd:/nuxt.js/blog cua hung/blog/app/blog/java/page.tsx';
+const content = `"use client";
 
 import React, { useMemo, useState, useEffect } from "react";
 import postsData from "../../../data/posts.json";
@@ -20,7 +21,7 @@ export default function JavaBlogStyled() {
     setScrollY(window.scrollY || 0);
     setOpenPostId(id);
     document.body.style.overflow = 'hidden';
-  }; 
+  };
 
   const closePost = () => {
     setOpenPostId(null);
@@ -48,7 +49,7 @@ export default function JavaBlogStyled() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: '#0a0c17', fontFamily: 'Inter, system-ui, -apple-system, "Segoe UI", Roboto' }}>
+    <div className="min-h-screen" style={{ background: '#0a0c17', fontFamily: 'Inter, system-ui, -apple-system, \"Segoe UI\", Roboto' }}>
       <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
       <main className="max-w-6xl mx-auto px-4 py-12">
         <header className="mb-10 grid grid-cols-1 md:grid-cols-2 items-center gap-6">
@@ -65,7 +66,7 @@ export default function JavaBlogStyled() {
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post, i) => {
             const borderClass = categoryColors[post.category || "DEFAULT"] || categoryColors.DEFAULT;
-            const stripHtml = (html: string) => html ? html.replace(/<[^>]*>/g, '').replace(/\s+/g,' ').trim() : '';
+            const stripHtml = (html: string) => html ? html.replace(/<[^>]*>/g, '').replace(/\\s+/g,' ').trim() : '';
             const excerptSource = post.excerpt || stripHtml(post.content || '') || post.summary || '';
             const excerpt = excerptSource.length > 220 ? excerptSource.slice(0, 220).trim() + '…' : excerptSource;
             return (
@@ -114,3 +115,6 @@ export default function JavaBlogStyled() {
     </div>
   );
 }
+`;
+fs.writeFileSync(path, content, 'utf8');
+console.log('WROTE', path);

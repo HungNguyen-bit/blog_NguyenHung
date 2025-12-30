@@ -102,6 +102,23 @@ function AdminPanel({ onLogout }: { onLogout: () => void }) {
     const handleProjectChange = (idx: number, field: string, value: string) => {
         setProjects((prev: any) => prev.map((p: any, i: number) => i === idx ? { ...p, [field]: value } : p));
     };
+
+    const handleCvUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files[0]) {
+            const file = e.target.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('token', getToken() || '');
+            const res = await fetch('/api/upload-cv', { method: 'POST', body: formData });
+            const data = await res.json();
+            if (data.url) {
+                setMsg('Ảnh CV đã được tải lên! Đường dẫn: ' + data.url);
+                setTimeout(() => setMsg(''), 3000);
+            } else {
+                setMsg('Upload CV lỗi: ' + (data.error || '')); setTimeout(() => setMsg(''), 3000);
+            }
+        }
+    };
     const addProject = () => {
         setProjects((prev) => [...prev, { id: Date.now(), name: "", description: "", image: "", link: "", content: "" }]); 
     };
@@ -178,6 +195,10 @@ function AdminPanel({ onLogout }: { onLogout: () => void }) {
                                     <div className="flex items-center gap-4 mb-2">
                                                                 <img src={avatar} alt="avatar" className="w-20 h-20 rounded-full border-2 border-blue-400 object-cover" />
                                                                 <input type="file" accept="image/*" onChange={handleAvatarChange} className="text-white" />
+                                    </div>
+                                    <div className="flex items-center gap-4 mb-2">
+                                        <label className="text-sm text-gray-300">Upload CV (lưu thành /public/cv.jpg):</label>
+                                        <input type="file" accept="image/*" onChange={handleCvUpload} className="text-white" />
                                     </div>
                                         <input name="name" value={profile.name} onChange={handleProfileChange} className="p-2 rounded bg-[#1e293b] text-white border border-blue-800" placeholder="Tên" />
                                         <input name="title" value={profile.title} onChange={handleProfileChange} className="p-2 rounded bg-[#1e293b] text-white border border-blue-800" placeholder="Tiêu đề" />

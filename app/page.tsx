@@ -14,6 +14,7 @@ type Project = {
 };
 
 export default function Home() {
+  const [showCvModal, setShowCvModal] = useState(false);
   const [projects, setProjects] = useState<Project[]>([]);
   const [profile, setProfile] = useState<any>(null);
   const introVariants = [
@@ -202,6 +203,41 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* CV Section - placed under Projects and above Contact (minimal per user request) */}
+      <section className="max-w-6xl mx-auto px-8 py-12" id="cv">
+        <h2 className="text-3xl font-bold text-green-400 mb-6">CV / Hồ sơ</h2>
+        <div className="bg-[#0f1724] rounded-xl shadow-lg p-6 border border-green-900/30 flex items-center gap-6">
+          <div className="flex-shrink-0">
+            <button onClick={() => setShowCvModal(true)} className="rounded-lg overflow-hidden border-2 border-green-800 hover:scale-105 transition-transform">
+              <img
+                src="/cv.jpg"
+                alt="CV Nguyễn Hưng"
+                className="max-w-full w-[320px] max-h-[420px] object-cover"
+                onError={(e: any) => { e.currentTarget.onerror = null; e.currentTarget.src = '/cv-placeholder.svg'; }}
+              />
+            </button>
+            <p className="text-sm text-gray-400 mt-2 text-center">Nhấn ảnh để phóng to. (Hiển thị tối đa 320×420)</p>
+          </div>
+          <div className="flex-1">
+            {/* Intentionally minimal: user will add CV image to /public/cv.jpg */}
+          </div>
+        </div>
+      </section>
+
+      {/* CV Modal */}
+      {showCvModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setShowCvModal(false)}>
+          <div className="max-w-[90vw] max-h-[90vh] p-4">
+            <img
+              src="/cv.jpg"
+              alt="CV Nguyễn Hưng"
+              className="w-auto h-auto max-w-full max-h-[90vh] object-contain rounded shadow-lg border-4 border-white/10"
+              onError={(e: any) => { e.currentTarget.onerror = null; e.currentTarget.src = '/cv-placeholder.svg'; }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Contact Section */}
       <section className="max-w-6xl mx-auto px-8 py-12" id="contact">
