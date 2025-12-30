@@ -2,51 +2,127 @@
   {
     "id": 1,
     "title": "Bài viết đầu tiên",
-    "content": "<p>Nội dung demo 1</p>",
+    "content": "Đây là nội dung bài viết đầu tiên trên blog của Nguyễn Hưng.",
     "date": "2025-12-26",
-    "tags": [
-      "blog"
-    ],
-    "summary": "Demo 1"
+    "tags": ["blog", "giới thiệu"],
+    "summary": "Bài viết mở đầu blog, chia sẻ mục tiêu và định hướng phát triển cá nhân trong lập trình."
   },
   {
     "id": 2,
-    "title": "Tại sao tôi chọn Java",
-    "content": "<p>Nội dung demo 2</p>",
+    "title": "Tại sao tôi chọn Java làm mối tình đầu trong lập trình",
+    "content": "<h2>Khởi đầu với Java</h2><p>Java là ngôn ngữ đầu tiên tôi thực sự gắn bó — không phải vì nó thời thượng, mà vì nó buộc mình phải tư duy có cấu trúc. Với Java, mọi thứ đều rõ ràng: khai báo kiểu, lifecycle của đối tượng, và luồng chạy của chương trình. Điều đó giúp tôi hiểu sâu hơn về lập trình hướng đối tượng và kỹ năng thiết kế phần mềm.</p><p>Tôi nhớ những buổi đầu viết các lớp đơn giản: <code>Person</code>, <code>Student</code>, rồi dần dần là các mô-đun phức tạp hơn. Java rèn cho mình tính kỷ luật: thiết kế API có ý nghĩa, đặt tên biến rõ ràng, và tách bạch trách nhiệm giữa các lớp.</p><h3>Lời khuyên cho người mới</h3><ul><li>Bắt đầu với JDK và một IDE tốt (IntelliJ IDEA).</li><li>Thực hành OOP bằng cách viết các lớp thực tế.</li><li>Đọc mã nguồn mở để học cách tổ chức dự án và đặt tên.</li></ul>",
     "date": "2025-12-26",
-    "tags": [
-      "java"
-    ],
-    "summary": "Demo 2"
+    "tags": ["java","startup","logic"],
+    "category": "JAVA CORE",
+    "summary": "Kể về lý do bắt đầu với Java, sự chặt chẽ của OOP và cách nó xây dựng tư duy lập trình vững chắc."
   },
   {
     "id": 3,
-    "title": "JVM cơ bản",
-    "content": "<p>Nội dung demo 3</p>",
+    "title": "JVM và bí mật của 'Viết một lần, chạy mọi nơi'",
+    "content": "<h2>Hiểu về JVM</h2><p>Khẩu hiệu 'Write once, run anywhere' thực sự được hiện thực nhờ JVM. Khi bạn biên dịch mã Java, trình biên dịch tạo ra bytecode trong file .class — đó là ngôn ngữ trung gian, không phụ thuộc hệ điều hành. JVM đọc bytecode và thực thi nó trên nền tảng cụ thể.</p><p>Quan trọng là: JVM thực hiện nhiều bước tối ưu, bao gồm ClassLoader (tải class khi cần), bytecode verification (bảo đảm an toàn), và JIT (Just-In-Time compilation) để biên dịch nóng những đoạn mã hay chạy thành mã máy để tăng tốc.</p><h3>Ví dụ đơn giản</h3><pre><code>public class Hello {\n  public static void main(String[] args) {\n    System.out.println(\"Hello JVM\");\n  }\n}\n</code></pre><p>Đọc thêm phần này giúp bạn hiểu nguyên lý nền tảng của hệ thống backend Java và các kỹ thuật tối ưu hiệu năng.</p>",
     "date": "2025-12-26",
-    "tags": [
-      "jvm"
-    ],
-    "summary": "Demo 3"
+    "tags": ["jvm","backend","java"],
+    "category": "JVM",
+    "summary": "Giải thích sâu nhưng dễ hiểu về cách máy ảo Java hoạt động, từ bytecode đến thực thi thực tế."
   },
   {
     "id": 4,
-    "title": "Từ Swing tới Web",
-    "content": "<p>Nội dung demo 4</p>",
+    "title": "Từ Java Swing đến Web hiện đại: Một bước nhảy vọt",
+    "content": "<h2>Từ desktop đến web</h2><p>Phát triển bằng Java Swing giúp mình hiểu rõ nguyên lý vẽ giao diện, xử lý sự kiện và quản lý vòng đời component. Khi chuyển sang web với Next.js, mình phải thay đổi cách suy nghĩ: DOM, routing, SSR/SSG, và cách tối ưu trải nghiệm người dùng trên nhiều thiết bị.</p><p>Sự khác biệt lớn nhất là mô hình render: Swing là immediate-mode UI, còn web hiện đại là declarative (React). Điều này ảnh hưởng tới cách thiết kế state và component. Ví dụ, quản lý trạng thái toàn cục trong web thường dùng Context/Redux, trong khi Swing thì dùng mô hình truyền sự kiện trực tiếp.</p><h3>Mẹo chuyển đổi</h3><ul><li>Đặt UI thành các component nhỏ, dễ test.</li><li>Học cách tối ưu render (memoization) trong React.</li><li>Chú ý tới accessibility và responsive design.</li></ul>",
     "date": "2025-12-26",
-    "tags": [
-      "frontend"
-    ],
-    "summary": "Demo 4"
+    "tags": ["java","swing","nextjs"],
+    "category": "FRONTEND",
+    "summary": "Chia sẻ trải nghiệm khi chuyển từ làm App Desktop (Swing) sang làm Web (Next.js). Sự khác biệt về tư duy UI/UX."
   },
   {
     "id": 5,
-    "title": "TCP Sockets",
-    "content": "<p>Nội dung demo 5</p>",
+    "title": "TCP Sockets: Cách tôi kết nối các máy tính lần đầu tiên",
+    "content": "<h2>Khởi tạo kết nối bằng Socket</h2><p>Lần đầu mình viết chương trình chat bằng TCP, cảm giác rất phấn khích: mở port, chấp nhận kết nối, đọc/ghi stream và xử lý nhiều client. Tuy đơn giản nhưng phải suy nghĩ kỹ về thread, blocking I/O và cách đóng tài nguyên an toàn.</p><p>Ví dụ server Java đơn giản:</p><pre><code>ServerSocket server = new ServerSocket(12345);\nSocket client = server.accept();\nBufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));\nString line = in.readLine();\n</code></pre><p>Những bài học rút ra: luôn kiểm soát threadpool, xử lý timeout và đảm bảo mã xử lý stream không block toàn bộ server.</p>",
     "date": "2025-12-26",
-    "tags": [
-      "networking"
-    ],
-    "summary": "Demo 5"
+    "tags": ["networking","java","socket"],
+    "category": "NETWORKING",
+    "summary": "Trải nghiệm xây dựng ứng dụng Chat hoặc truyền file qua Socket. Những khó khăn khi xử lý luồng dữ liệu (Stream)."
+  },
+  {
+    "id": 6,
+    "title": "JavaScript - Khi sự tự do lên ngôi",
+    "content": "<h2>Chuyển sang JavaScript</h2><p>JavaScript mang lại cảm giác tự do so với Java: không cần type cứng, object linh hoạt, và nền tảng web giúp tạo ra sản phẩm nhanh. Tuy nhiên, tính 'tự do' cũng mang rủi ro: lỗi runtime dễ xảy ra nếu không có test hay lint.</p><p>Một điểm mạnh là async/await giúp xử lý bất đồng bộ rõ ràng hơn. Ví dụ:</p><pre><code>async function fetchData() {\n  const res = await fetch('/api');\n  return res.json();\n}\n</code></pre><p>Lời khuyên: viết test, dùng TypeScript khi dự án lớn, và hiểu rõ event loop để tránh các bẫy async.</p>",
+    "date": "2025-12-26",
+    "tags": ["javascript","async","web"],
+    "category": "JAVASCRIPT",
+    "summary": "Cú sốc khi chuyển sang JS: Sự linh hoạt của Object, Class và cách xử lý bất đồng bộ (Async/Await) đầy thú vị."
+  },
+  {
+    "id": 7,
+    "title": "Dự án App Trang Sức: Khi Flutter gặp Firebase",
+    "content": "<h2>Case study: App bán trang sức</h2><p>Dự án dùng Flutter cho giao diện mobile và Firebase cho backend realtime. Mô tả các bước: thiết kế data model, cấu hình authentication, và implement chat hoặc realtime updates cho sản phẩm.</p><p>Một số điểm kỹ thuật: sử dụng Cloud Firestore cho dữ liệu, Storage cho ảnh sản phẩm, và Firebase Rules để bảo vệ dữ liệu. Trải nghiệm người dùng cần mượt mà: lazy-loading ảnh, tối ưu list view và xử lý ngoại tuyến khi mạng yếu.</p>",
+    "date": "2025-12-26",
+    "tags": ["flutter","firebase","mobile"],
+    "category": "MOBILE",
+    "summary": "Review quá trình làm đồ án app bán vàng bạc/trang sức. Cách quản lý dữ liệu thời gian thực và trải nghiệm người dùng trên di động."
+  },
+  {
+    "id": 8,
+    "title": "DevSecOps: Đừng đợi đến khi bị 'Hack' mới lo bảo mật",
+    "content": "<h2>DevSecOps và tư duy 'Shift Left'</h2><p>Bảo mật không phải việc làm sau cùng. DevSecOps khuyến khích tích hợp kiểm tra bảo mật ngay từ giai đoạn viết mã: static analysis, dependency scanning, secret scanning, và unit tests. Đưa các bước này vào pipeline giúp phát hiện lỗ hổng sớm và giảm chi phí sửa lỗi.</p><p>Một ví dụ: chạy Snyk hoặc Dependabot để quét dependency, thêm bước quét SAST trong CI, và tự động hóa alert khi phát hiện issue nghiêm trọng.</p>",
+    "date": "2025-12-26",
+    "tags": ["devsecops","security","cicd"],
+    "category": "DEVOPS",
+    "summary": "Tại sao bảo mật phải bắt đầu từ lúc viết code chứ không phải sau khi deploy. Giới thiệu về tư duy 'Shift Left'."
+  },
+  {
+    "id": 9,
+    "title": "GitHub Actions: Robot tự động hóa của riêng tôi",
+    "content": "<h2>CI/CD với GitHub Actions</h2><p>Mình dùng GitHub Actions để tự động hoá kiểm tra mã nguồn (lint, test) và deploy lên Vercel. Workflow cơ bản gồm: checkout, setup node, install, run lint, run tests, và deploy. Việc này giúp giảm rủi ro khi merge code mới.</p><p>Ví dụ workflow ngắn:</p><pre><code>name: CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with: { node-version: '18' }\n      - run: npm ci\n      - run: npm run lint\n      - run: npm test\n</code></pre>",
+    "date": "2025-12-26",
+    "tags": ["github","automation","devops"],
+    "category": "AUTOMATION",
+    "summary": "Cách tôi dùng GitHub Actions để tự động kiểm tra lỗi và deploy blog này lên Vercel mỗi khi đẩy code mới."
+  },
+  {
+    "id": 10,
+    "title": "Nhìn lại hành trình 2025: Tôi đã học được gì?",
+    "content": "<h2>Tổng kết 2025</h2><p>Năm 2025 là năm của thử nghiệm: mình học Java sâu hơn, triển khai web với Next.js, và thử các khía cạnh DevOps/DevSecOps. Mỗi thất bại đều là bài học quý: deploy hỏng, bug production, hay deadline trễ.</p><p>Những điều rút ra: tự động hóa cần thiết, test là cứu cánh, và học bất kỳ công nghệ mới nào đều phải gắn với dự án thực tế. Mục tiêu 2026: trở thành Fullstack Dev với chiều sâu backend hơn và kỹ năng triển khai an toàn.</p>",
+    "date": "2025-12-26",
+    "tags": ["growth","career","future"],
+    "category": "REFLECTION",
+    "summary": "Bài viết tổng kết cuối năm. Những bài học xương máu, những dự án đã làm và mục tiêu trở thành Fullstack Dev vào năm 2026."
+  }
+  ,
+  {
+    "id": 11,
+    "title": "Spring Boot: Tối ưu cấu hình và profiling",
+    "content": "<h2>Spring Boot & hiệu năng</h2><p>Các kỹ thuật tối ưu cấu hình ứng dụng Spring Boot: profiling, tuning JVM, connection pool và caching. Kèm ví dụ cấu hình để giảm thời gian phản hồi.</p>",
+    "date": "2025-12-26",
+    "tags": ["java","spring boot","performance"],
+    "category": "FRAMEWORK",
+    "summary": "Các mẹo tối ưu cấu hình Spring Boot: profiling, JVM tuning, caching và connection pool."
+  },
+  {
+    "id": 12,
+    "title": "Quản lý phụ thuộc với Maven & Gradle: lựa chọn và mẹo",
+    "content": "<h2>Maven vs Gradle</h2><p>So sánh nhanh Maven và Gradle, cách chọn tool phù hợp, và những mẹo quản lý dependency, multi-module project và caching build để tiết kiệm thời gian CI.</p>",
+    "date": "2025-12-26",
+    "tags": ["java","maven","gradle"],
+    "category": "DEVOPS",
+    "summary": "So sánh Maven & Gradle, mẹo quản lý phụ thuộc và tối ưu multi-module build."
+  },
+  {
+    "id": 13,
+    "title": "Concurrency trên JVM: Các mẫu và tránh bẫy",
+    "content": "<h2>Concurrency basics</h2><p>Giải thích thread, executor, synchronized, volatile và các mẫu concurrency an toàn trên JVM. Ví dụ dùng ExecutorService và CompletableFuture trong Java hiện đại.</p>",
+    "date": "2025-12-26",
+    "tags": ["java","concurrency","jvm"],
+    "category": "JVM",
+    "summary": "Giới thiệu các mẫu concurrency an toàn trên JVM và ví dụ với ExecutorService/CompletableFuture."
+  },
+  {
+    "id": 14,
+    "title": "Tối ưu hiệu năng JavaScript trên trình duyệt",
+    "content": "<h2>Web performance</h2><p>Những kỹ thuật tối ưu JavaScript: giảm repaints, debounce/throttle, lazy-loading, web workers và cách dùng Chrome DevTools để profile và tối ưu mã frontend.</p>",
+    "date": "2025-12-26",
+    "tags": ["javascript","performance","web"],
+    "category": "JAVASCRIPT",
+    "summary": "Kỹ thuật tối ưu hiệu năng JavaScript trên trình duyệt: profiling, lazy-loading, web workers và mẹo DevTools."
   }
 ]
